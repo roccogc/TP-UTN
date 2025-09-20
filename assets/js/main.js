@@ -1,10 +1,8 @@
-// JS básico y sencillo para e‑commerce (sin cosas raras)
+
 (function () {
-  // ====== Funciones cortitas de ayuda ======
   function $(sel) { return document.querySelector(sel); }
   function $all(sel) { return Array.from(document.querySelectorAll(sel)); }
 
-  // Usamos localStorage para guardar el carrito
   const CART_KEY = "cart_simple_v1";
 
   function cargarCarrito() {
@@ -29,13 +27,11 @@
     });
   }
 
-  // Convierte un texto de precio como "$ 29.999" a número 29999
   function precioANumero(txt) {
     if (!txt) return 0;
     return Number(txt.replace(/[^\d]/g, "")) || 0;
   }
 
-  // Formatea un número a "$ 29.999"
   function formatear(n) {
     try {
       return new Intl.NumberFormat("es-AR", { style: "currency", currency: "ARS", maximumFractionDigits: 0 }).format(n);
@@ -46,7 +42,6 @@
 
   function agregarAlCarrito(item) {
     let carrito = cargarCarrito();
-    // Buscamos si ya existe
     let encontrado = -1;
     for (let i = 0; i < carrito.length; i++) {
       if (carrito[i].id === item.id) { encontrado = i; break; }
@@ -91,9 +86,7 @@
     return total;
   }
 
-  // ====== Enlazar botones "Añadir" en catálogo ======
   function enlazarBotonesCatalogo() {
-    // Busca botones con clase .add-to-cart o links que digan "Añadir"
     $all(".add-to-cart, .card .actions a").forEach(function (btn) {
       let texto = (btn.textContent || "").trim().toLowerCase();
       if (texto.indexOf("añadir") === -1 && !btn.classList.contains("add-to-cart")) return;
@@ -112,7 +105,6 @@
     });
   }
 
-  // ====== Botón en la página de producto ======
   function enlazarBotonProducto() {
     let btn = document.querySelector(".hero-card a.btn");
     if (!btn) return;
@@ -130,7 +122,6 @@
     });
   }
 
-  // ====== Render del carrito (cart.html) ======
   function renderCarrito() {
     if (location.pathname.indexOf("cart.html") === -1) return;
     let tbody = document.querySelector("table.table tbody");
@@ -171,7 +162,7 @@
           renderCarrito();
         });
         let btnQuitar = document.createElement("button");
-        btnQuitar.innerHTML = "🗑️"; // icono de tacho
+        btnQuitar.innerHTML = "🗑️";
         btnQuitar.title = "Quitar del carrito";
         btnQuitar.style.marginLeft = "8px";
         btnQuitar.style.cursor = "pointer";
@@ -198,7 +189,6 @@
     totalCell.textContent = formatear(totalCarrito());
   }
 
-  // ====== Checkout (checkout.html) ======
   function prepararCheckout() {
     if (location.pathname.indexOf("checkout.html") === -1) return;
     let form = document.querySelector("form");
@@ -212,13 +202,11 @@
         location.href = "products.html";
         return;
       }
-      // Validación MUY básica: que exista un nombre
       let nombre = (form.querySelector("input[name=nombre]") || {}).value || "";
       if (!nombre.trim()) {
         alert("Completá tu nombre para continuar.");
         return;
       }
-      // "Procesar" compra
       let total = formatear(totalCarrito());
       localStorage.removeItem(CART_KEY);
       actualizarContador();
@@ -227,7 +215,6 @@
     });
   }
 
-  // Mostrar un contador al lado del link al carrito si existe
   function insertarMiniContador() {
     let link = document.querySelector("a[href*='cart.html']");
     if (!link) return;
