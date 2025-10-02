@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zona Outfit | Carrito</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/img/logo.png">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo.png" alt="Logo">
+        <strong>Zona Outfit</strong>
+      </a>
+      <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="products.html">Productos</a>
+        <a href="cart.html">Carrito</a>
+        <a href="contact.html">Contacto</a>
+      </nav>
+      <div class="actions">
+        <a class="btn" href="products.html">Comprar</a>
+        <button class="btn-ghost" id="themeToggle" type="button">Oscuro/Claro</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h2>Tu carrito</h2>
+    <table class="table" style="margin-top:12px;">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Remera Básica</td>
+          <td>$ 9.999</td>
+          <td>1</td>
+          <td>$ 9.999</td>
+        </tr>
+        <tr>
+          <td>Zapatillas Urbanas</td>
+          <td>$ 29.999</td>
+          <td>1</td>
+          <td>$ 29.999</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">Total</td>
+          <td>$ 39.998</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <div style="display:flex; gap:10px; margin-top:14px;">
+      <a class="btn" id="finalizar_compra_btn" href="checkout.html">Finalizar compra</a>
+      <a class="btn-ghost" href="products.html">Seguir comprando</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Zona Outfit</h4>
+        <p class="footer-note">Ecommerce de ropa en HTML + CSS + JS</p>
+      </div>
+      <div>
+        <h4>Secciones</h4>
+        <ul>
+          <li><a href="products.html">Catálogo</a></li>
+          <li><a href="cart.html">Carrito</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li>tienda@ZonaOutfit.com</li>
+          <li>+54 9 351 000 0000</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

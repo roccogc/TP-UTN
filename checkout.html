@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zona Outfit | Checkout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/img/logo.png">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo.png" alt="Logo">
+        <strong>Zona Outfit</strong>
+      </a>
+      <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="products.html">Productos</a>
+        <a href="cart.html">Carrito</a>
+        <a href="contact.html">Contacto</a>
+      </nav>
+      <div class="actions">
+        <a class="btn" href="products.html">Comprar</a>
+        <button class="btn-ghost" id="themeToggle" type="button">Oscuro/Claro</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h2>Checkout</h2>
+    <form class="form" id="checkout_form">
+      <div class="form-row">
+        <input class="input" id="nombre_input" type="text" name="nombre" placeholder="Nombre">
+        <input class="input" id="apellido_input" type="text" name="apellido" placeholder="Apellido">
+      </div>
+      <div class="form-row">
+        <input class="input" id="email_input" type="email" name="email" placeholder="Email">
+        <input class="input" id="telefono_input" type="tel" name="telefono" placeholder="Teléfono">
+      </div>
+      <input class="input" id="direccion_input" type="text" name="direccion" placeholder="Dirección">
+      <div class="form-row">
+        <input class="input" id="ciudad_input" type="text" name="ciudad" placeholder="Ciudad">
+        <input class="input" id="cp_input" type="number" name="cp" placeholder="Código Postal">
+      </div>
+      <div class="form-row">
+        <select class="select" name="provincia" required>
+          <option value="">Provincia</option>
+          <option>Córdoba</option><option>Buenos Aires</option><option>Santa Fe</option>
+          <option>Mendoza</option><option>Salta</option><option>Tucumán</option>
+        </select>
+        <select class="select" name="envio" required>
+          <option value="">Método de envío</option>
+          <option>Retiro en sucursal</option>
+          <option>Envío estándar</option>
+          <option>Envío prioritario</option>
+        </select>
+      </div>
+
+      <h3>Pago</h3>
+      <div class="form-row">
+        <input class="input" id="titular_input" type="text" name="titular" placeholder="Titular de la tarjeta">
+        <input class="input" id="dni_input" type="number" name="dni" placeholder="DNI">
+      </div>
+      <div class="form-row">
+        <input class="input" id="tarjeta_input" type="number" name="tarjeta" placeholder="Número de tarjeta">
+        <input class="input" id="vencimiento_input" type="number" name="vencimiento" placeholder="MM/AA">
+      </div>
+      <div class="form-row">
+        <input class="input" id="cvv_input" type="number" name="cvv" placeholder="CVV">
+        <select class="select" name="cuotas" required>
+          <option value="">Cuotas</option>
+          <option>1 pago</option><option>3 cuotas</option><option>6 cuotas</option><option>12 cuotas</option>
+        </select>
+      </div>
+      <p id="error_checkout"></p>
+      <button class="btn" type="submit">Confirmar compra</button>
+      <a class="btn-ghost" href="cart.html">Volver al carrito</a>
+      <p class="footer-note"></p>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Zona Outfit</h4>
+        <p class="footer-note">Ecommerce de ropa en HTML + CSS + JS</p>
+      </div>
+      <div>
+        <h4>Secciones</h4>
+        <ul>
+          <li><a href="products.html">Catálogo</a></li>
+          <li><a href="cart.html">Carrito</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li>tienda@ZonaOutfit.com</li>
+          <li>+54 9 351 000 0000</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+img { display: block; max-width: 100%; height: auto; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+button { border: 0; background: none; font: inherit; cursor: pointer; }
+input, select, textarea { font: inherit; }
